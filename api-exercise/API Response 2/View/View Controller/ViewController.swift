@@ -11,16 +11,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let networkManager = NetworkManager()
-        // Do any additional setup after loading the view.
-        networkManager.getNewMovie(page: 1) { movie, error in
-            movie?.map({ data in
-                print(data)
-            })
-            
-        }
+//        // Do any additional setup after loading the view.
+        let viewModel = MovieViewModel(page: 1)
+        
+        viewModel.callNetworkManager()
+        
     }
-
-
 }
 
